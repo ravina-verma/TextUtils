@@ -39,7 +39,7 @@
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
     <div class= "container">
-     <form action="/analyze" method="get">
+     <form action="/analyze" method="post">{% csrf_token %}
   <div class="form-group">
       <label for="exampleFormControlTextarea1"><strong>Enter your Text Here.</strong></label>
     <textarea class="form-control" name="text" id="exampleFormControlTextarea1" rows="8"></textarea>
@@ -82,7 +82,7 @@
 <footer>
   <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
     © 2021 Copyright:
-    <a class="text-white" href="https://ravina-verma.github.io/CV//">Ravina Verma</a>
+    <a class="text-white" href="https://ravina-verma.github.io/CSS/">Ravina Verma</a>
   </div>
 </footer>
 </html>

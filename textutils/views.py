@@ -10,12 +10,12 @@ def contact(request):
     return render(request,'contact.html')
 def analyze(request):
  #get text
- djtext=request.GET.get('text', 'No text entered')
- removepunc=request.GET.get('removepunc','off')
- capitalize=request.GET.get('capitalize','off')
- removespace=request.GET.get('removespace','off')
- newlineremover=request.GET.get('newlineremover','off')
- charcount=request.GET.get('charcount','off')
+ djtext=request.POST.get('text', 'No text entered')
+ removepunc=request.POST.get('removepunc','off')
+ capitalize=request.POST.get('capitalize','off')
+ removespace=request.POST.get('removespace','off')
+ newlineremover=request.POST.get('newlineremover','off')
+ charcount=request.POST.get('charcount','off')
  #analyze text
  analyzed = ""
  purpose=""
@@ -52,7 +52,7 @@ def analyze(request):
  if newlineremover=="on":
      analyzed=""
      for char in djtext:
-         if char !='\n':
+         if char !='\n' and char!='\r':
              analyzed+=char
      djtext=analyzed
      purpose+='| Removed newline '
